@@ -1,0 +1,26 @@
+# idea configurations
+/.vscode/
+/.idea/
+
+# python byte-compiled
+__pycache__
+
+# virtual environment
+/.venv/
+/.env/
+/venv/
+/env/
+
+# temporary files storage
+/temp/
+/tmp/
+
+# coverage reports
+*.coverage.db
+*.coverage
+
+# pytest cache
+.pytest_cache
+
+# documentation builds
+/_build/
