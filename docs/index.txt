@@ -19,7 +19,29 @@ modules should be enough to complete your workspace preparation.
 Downloading the code base
 =========================
 
-.. todo: section description
+You can create your own repo or just download the code, it's up to you.
+
+Using git
+---------
+
+**Prerequisites:**
+
+- `git`_ installed
+- Access to GitHub account
+
+You are to create **your** own repository using a template.
+Navigate to `exam-basics`_ in your web browser and press:
+**Use this template -> Create a new repository**. Proceed this regular repo
+creation process, using the template.
+
+After that clone the repo to your local machine.
+
+Straight-forward download
+-------------------------
+
+Navigate to `exam-basics`_ in your web browser and press:
+**Code -> Download ZIP**. A ``.zip`` archive will be downloaded to your
+local machine. Extract it to the directory you like.
 
 Initializing virtual environment
 ================================
@@ -120,3 +142,5 @@ Run ``pytest``:
 
 .. _venv: https://docs.python.org/library/venv.html
 .. _pip: https://pip.pypa.io
+.. _git: https://git-scm.com
+.. _exam-basics: https://github.com/edu-python-course/exam-basics
