@@ -6,7 +6,7 @@ import pytest
 from exam import primes
 
 
-@pytest.mark.xfail(os.environ.get("ENV_DEV"), reason="development environment")
+@pytest.mark.xfail(os.environ.get("DEV"), reason="development environment")
 def test_is_prime():
     assert primes.is_prime(10) is False
     assert primes.is_prime(1) is False
@@ -15,13 +15,13 @@ def test_is_prime():
     assert primes.is_prime(547) is True
 
 
-@pytest.mark.xfail(os.environ.get("ENV_DEV"), reason="development environment")
+@pytest.mark.xfail(os.environ.get("DEV"), reason="development environment")
 @pytest.mark.dependency()
 def test_get_primes(limit, primes_under_1k):
     assert primes.get_primes(limit) == primes_under_1k
 
 
-@pytest.mark.xfail(os.environ.get("ENV_DEV"), reason="development environment")
+@pytest.mark.xfail(os.environ.get("DEV"), reason="development environment")
 @pytest.mark.dependency(depends=["test_get_primes"])
 def test_benchmark(limit, primes_under_1k):
     time_limit = 0.5
