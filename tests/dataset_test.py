@@ -6,7 +6,8 @@ import pytest
 from exam.dataset import filter_by_values
 
 
-@pytest.mark.xfail(os.environ.get("DEV"), reason="development environment")
+@pytest.mark.xfail(os.environ.get("ENV") == "dev",
+                   reason="development environment")
 @pytest.mark.dependency()
 def test_dataset_f1(dataset, filter_1):
     filtered, *keys = filter_1
@@ -25,7 +26,8 @@ def test_dataset_f1_benchmark():
         f"execution time exceeded time limit: {time_limit}"
 
 
-@pytest.mark.xfail(os.environ.get("DEV"), reason="development environment")
+@pytest.mark.xfail(os.environ.get("ENV") == "dev",
+                   reason="development environment")
 @pytest.mark.dependency()
 def test_dataset_f2(dataset, filter_2):
     filtered, *keys = filter_2
