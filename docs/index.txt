@@ -20,24 +20,6 @@ It's recommended to work in a virtual environment, since this project has its
 own dependencies to automate testing of your work. Built-in `venv`_ and `pip`_
 modules should be enough to complete your workspace preparation.
 
-You will need to install internal package, otherwise the test runner would not
-be available to discover the code base. To install it in editable mode do:
-
-.. code-block:: shell
-
-    pip install -e .
-
-After that the code base will be linked with your interpreter.
-
-.. important::  This project uses *pyproject.toml* configuration.
-                Sometimes ``pip`` may fail while installing it.
-                Just update ``pip`` to newest version and the problem
-                should gone:
-
-                .. code-block:: shell
-
-                    python -m pip install --upgrade pip
-
 Downloading the code base
 =========================
 
@@ -127,13 +109,23 @@ Installing dependencies
   (`installation guide <https://pip.pypa.io/en/stable/installation/>`_)
 - Internet connection is available
 
-The project's dependencies are listed in ``requirements.txt`` file and it's all
-you need to get them installed. Navigate to the directory with this file though
-your terminal and do:
+You will need to install internal package, otherwise the test runner would not
+be available to discover the code base. To install it in editable mode do:
 
 .. code-block:: shell
 
-    pip install -r requirements.txt
+    pip install -e .
+
+After that the code base will be linked with your interpreter.
+
+.. important::  This project uses *pyproject.toml* configuration.
+                Sometimes ``pip`` may fail while installing it.
+                Just update ``pip`` to newest version and the problem
+                should gone:
+
+                .. code-block:: shell
+
+                    python -m pip install --upgrade pip
 
 Running tests local
 ===================
