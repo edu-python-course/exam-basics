@@ -37,7 +37,7 @@ testpaths = ["tests"]
 
 [tool.pylint."MASTER"]
 fail-under = 8
-ignore = ["tests"]
+ignore = ["tests", "example.py"]
 persistent = true
 
 [build-system]
