@@ -2,7 +2,7 @@
                      Python Training Course - Exam Basics
 ###############################################################################
 
-.. todo: add general description
+Welcome to exam.
 
 ***************
 Getting started
@@ -192,7 +192,9 @@ the example section).
 
 Available markers are:
 
-- .. todo: add markers list
+- level_1
+- level_2
+- level_3
 
 Doing exam
 ==========
