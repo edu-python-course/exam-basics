@@ -1,3 +1,6 @@
+import csv
+from pathlib import Path
+
 import pytest
 
 
@@ -46,3 +49,40 @@ def primes_under_1k():
             787, 797, 809, 811, 821, 823, 827, 829, 839, 853, 857, 859, 863,
             877, 881, 883, 887, 907, 911, 919, 929, 937, 941, 947, 953, 967,
             971, 977, 983, 991, 997]
+
+
+def dict_from_csv(filepath):
+    with open(filepath) as csv_file_handler:
+        return [row for row in csv.DictReader(csv_file_handler)]
+
+
+DATASET = dict_from_csv(
+    Path(__file__).resolve().parent.joinpath("fixtures", "dataset.csv")
+)
+
+
+@pytest.fixture
+def dataset():
+    return DATASET
+
+
+FILTER_1 = dict_from_csv(
+    Path(__file__).resolve().parent.joinpath("fixtures", "filter_1.csv")
+)
+KEYS_1 = "city",
+
+
+@pytest.fixture
+def filter_1():
+    return FILTER_1, *KEYS_1
+
+
+FILTER_2 = dict_from_csv(
+    Path(__file__).resolve().parent.joinpath("fixtures", "filter_2.csv")
+)
+KEYS_2 = "last_name", "city"
+
+
+@pytest.fixture
+def filter_2():
+    return FILTER_2, *KEYS_2
