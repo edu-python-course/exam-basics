@@ -11,6 +11,10 @@ Getting started
 #. Download the code base templates
 #. Create a virtual environment
 #. Install project dependencies
+#. Create a new branch
+#. Complete the challenges
+#. Push your changes
+#. Open a pull request
 
 It's recommended to work in a virtual environment, since this project has its
 own dependencies to automate testing of your work. Built-in `venv`_ and `pip`_
@@ -66,7 +70,7 @@ A new directory named after your choice will appear in the project directory.
           it to ``.gitignore`` file to avoid adding and it to your repository.
 
 Activating and deactivating virtual environment
-===============================================
+-----------------------------------------------
 
 **Prerequisites:**
 
@@ -120,8 +124,8 @@ Running tests local
 
 - dependencies are installed
 
-You can run tests, prepared for this project locally to check your code. There
-are two tools used to evaluate your code base:
+You can run tests, prepared for this project locally to check your code.
+There are two tools used to evaluate your code base:
 
 - pytest
 - pylint
@@ -139,6 +143,64 @@ Run ``pytest``:
 .. code-block:: shell
 
     pytest
+
+
+**********
+Challenges
+**********
+
+The **exam** has challenges described in **src/exam** directory.
+Various test cases are already added to this project, your task is
+to implement the functions itself.
+
+.. important:: You would not modify files located in **tests**.
+               Your working directory is **src/exam**.
+
+.. important:: In case you are using git repo, do not forget to create
+               a new branch.
+
+Example
+=======
+
+Let's start with some example workflow.
+
+This repository comes with pre-defined test cases located in **tests**
+directory. ``example`` tests are disabled by default. But you can run
+them by passing ``-m example`` flag to the ``pytest`` command.
+
+.. code-block:: shell
+
+    pytest -m example
+
+You should see a message that test has failed. That's because the function
+for it hasn't been implemented yet. Go to **src/exam/example.py** and paste
+the code below to the ``example`` function's body:
+
+.. code-block:: python
+
+    return str(int(x) + int(y))
+
+Repeat the test runner command from above. Now it will complete successfully.
+
+Changing test markers
+---------------------
+
+By default ``pytest`` will run all the available tests (except *example*).
+But you can pass a test marker command to the runner to run a single tests
+group. Just add flag ``-m <marker_name>`` after the ``pytest`` (just like in
+the example section).
+
+Available markers are:
+
+- .. todo: add markers list
+
+Doing exam
+==========
+
+Look for the functions declared in **src/exam**. These ones have description,
+but have no bodies. Your task is to add implementations and pass the tests.
+
+Good luck!
 
 .. _venv: https://docs.python.org/library/venv.html
 .. _pip: https://pip.pypa.io

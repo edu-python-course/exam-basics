@@ -26,7 +26,10 @@ pytest-dependency = "^0.5.1"
 Sphinx = "^6.1.3"
 
 [tool.pytest.ini_options]
-addopts = "--verbose"
+addopts = "--verbose -m 'not example'"
+markers = [
+    "example: project setup example marker (disabled by default)",
+]
 testpaths = ["tests"]
 
 [tool.pylint."MASTER"]
