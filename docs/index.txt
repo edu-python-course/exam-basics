@@ -2,4 +2,219 @@
                      Python Training Course - Exam Basics
 ###############################################################################
 
-.. todo: provide documentation for students
+Welcome to exam.
+
+***************
+Getting started
+***************
+
+#. Download the code base templates
+#. Create a virtual environment
+#. Install project dependencies
+#. Create a new branch
+#. Complete the challenges
+#. Push your changes
+#. Open a pull request
+
+It's recommended to work in a virtual environment, since this project has its
+own dependencies to automate testing of your work. Built-in `venv`_ and `pip`_
+modules should be enough to complete your workspace preparation.
+
+Downloading the code base
+=========================
+
+You can create your own repo or just download the code, it's up to you.
+
+Using git
+---------
+
+**Prerequisites:**
+
+- `git`_ installed
+- Access to GitHub account
+
+You are to create **your** own repository using a template.
+Navigate to `exam-basics`_ in your web browser and press:
+**Use this template -> Create a new repository**. Proceed this regular repo
+creation process, using the template.
+
+After that clone the repo to your local machine.
+
+Straight-forward download
+-------------------------
+
+Navigate to `exam-basics`_ in your web browser and press:
+**Code -> Download ZIP**. A ``.zip`` archive will be downloaded to your
+local machine. Extract it to the directory you like.
+
+Initializing virtual environment
+================================
+
+To create a brand new virtual for your project, navigate to its home directory
+via your terminal. Once you're in the right place, do:
+
+.. hint:: You are free to choose any name you like for your environment.
+          Regular command pattern is ``python -m venv {env_name}``. Common
+          names are: ``.venv``, ``.env``, ``venv``, ``env``, ``Venv``, ``Env``
+          etc.
+
+.. code-block:: shell
+
+    python -m venv .venv
+
+A new directory named after your choice will appear in the project directory.
+
+.. note:: Virtual environment is configured for **your** target system and is
+          useless on other computers. There will be a dedicated env created on
+          each machine. So, **should not** become a part of a project. Include
+          it to ``.gitignore`` file to avoid adding and it to your repository.
+
+Activating and deactivating virtual environment
+-----------------------------------------------
+
+**Prerequisites:**
+
+- virtual environment is created
+
+Before you start working - your virtual environment should be activated.
+The activation script is already created within your *venv* directory.
+You are just to run it.
+
+Activate on Windows:
+
+.. code-block:: shell
+
+    .venv\Scripts\activate
+
+Activate on Unix (macOS and Linux distros):
+
+.. code-block:: shell
+
+    source .venv/bin/activate
+
+To deactivate type ``deactivate`` to your terminal and hit **Enter** key.
+
+.. code-block::
+
+    deactivate
+
+Installing dependencies
+=======================
+
+.. note:: It's recommended to work in a virtual environment.
+
+**Prerequisites:**
+
+- `pip`_ is installed
+  (`installation guide <https://pip.pypa.io/en/stable/installation/>`_)
+- Internet connection is available
+
+You will need to install internal package, otherwise the test runner would not
+be available to discover the code base. To install it in editable mode do:
+
+.. code-block:: shell
+
+    pip install -e .
+
+After that the code base will be linked with your interpreter.
+
+.. important::  This project uses *pyproject.toml* configuration.
+                Sometimes ``pip`` may fail while installing it.
+                Just update ``pip`` to newest version and the problem
+                should gone:
+
+                .. code-block:: shell
+
+                    python -m pip install --upgrade pip
+
+Running tests local
+===================
+
+**Prerequisites:**
+
+- dependencies are installed
+
+You can run tests, prepared for this project locally to check your code.
+There are two tools used to evaluate your code base:
+
+- pytest
+- pylint
+
+Testing configurations are already included to this project.
+
+Run ``pylint``:
+
+.. code-block:: shell
+
+    pylint src
+
+Run ``pytest``:
+
+.. code-block:: shell
+
+    pytest
+
+
+**********
+Challenges
+**********
+
+The **exam** has challenges described in **src/exam** directory.
+Various test cases are already added to this project, your task is
+to implement the functions itself.
+
+.. important:: You would not modify files located in **tests**.
+               Your working directory is **src/exam**.
+
+.. important:: In case you are using git repo, do not forget to create
+               a new branch.
+
+Example
+=======
+
+Let's start with some example workflow.
+
+This repository comes with pre-defined test cases located in **tests**
+directory. ``example`` tests are disabled by default. But you can run
+them by passing ``-m example`` flag to the ``pytest`` command.
+
+.. code-block:: shell
+
+    pytest -m example
+
+You should see a message that test has failed. That's because the function
+for it hasn't been implemented yet. Go to **src/exam/example.py** and paste
+the code below to the ``example`` function's body:
+
+.. code-block:: python
+
+    return str(int(x) + int(y))
+
+Repeat the test runner command from above. Now it will complete successfully.
+
+Changing test markers
+---------------------
+
+By default ``pytest`` will run all the available tests (except *example*).
+But you can pass a test marker command to the runner to run a single tests
+group. Just add flag ``-m <marker_name>`` after the ``pytest`` (just like in
+the example section).
+
+Available markers are:
+
+- level_1
+- level_2
+- level_3
+
+Doing exam
+==========
+
+Look for the functions declared in **src/exam**. These ones have description,
+but have no bodies. Your task is to add implementations and pass the tests.
+
+Good luck!
+
+.. _venv: https://docs.python.org/library/venv.html
+.. _pip: https://pip.pypa.io
+.. _git: https://git-scm.com
+.. _exam-basics: https://github.com/edu-python-course/exam-basics

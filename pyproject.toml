@@ -20,17 +20,24 @@ packages = [
 python = "^3.9"
 pytest = "^7.2.1"
 pylint = "^2.15.10"
+pytest-dependency = "^0.5.1"
 
 [tool.poetry.dev-dependencies]
 Sphinx = "^6.1.3"
 
 [tool.pytest.ini_options]
-addopts = "--verbose"
+addopts = "--verbose -m 'not example'"
+markers = [
+    "example: project setup example marker (disabled by default)",
+    "level_1",
+    "level_2",
+    "level_3",
+]
 testpaths = ["tests"]
 
 [tool.pylint."MASTER"]
 fail-under = 8
-ignore = ["tests"]
+ignore = ["tests", "example.py"]
 persistent = true
 
 [build-system]
