@@ -8,7 +8,12 @@ import pytest
 def small_fixture():
     """Provide a brick wall structure and bricks count"""
 
-    return [[1], [1], [1]], 3
+    return [[1], [1], [1]]
+
+
+@pytest.fixture
+def small_fixture_count():
+    return 3
 
 
 @pytest.fixture
@@ -21,7 +26,12 @@ def regular_fixture():
         [2, 3, 1, 5, 5, 2],
         [3, 4, 3, 4, 3, 1],
         [5, 5, 3, 2, 3],
-    ], 29
+    ]
+
+
+@pytest.fixture
+def regular_fixture_count():
+    return 29
 
 
 @pytest.fixture
