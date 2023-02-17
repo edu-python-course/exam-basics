@@ -17,6 +17,15 @@ def get_bricks_count(structure: List[list[int]]) -> int:
     :return: total number of bricks in the entire wall structure
     :rtype: int
 
+    The general algorithm is to walk through all collections of the given
+    structure and to sum number of its elements.
+
+    Usage example:
+
+    >>> assert get_bricks_count([[1], [1], [1]]) == 3
+    >>> assert get_bricks_count([[1, 1], [2], [1, 1]]) == 5
+    >>> assert get_bricks_count([[6], [2, 2, 2], [3, 1, 1, 1], [2, 3, 1]]) == 11
+
     """
 
 
