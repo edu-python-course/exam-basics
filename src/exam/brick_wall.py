@@ -8,7 +8,7 @@ from typing import List
 
 
 # noinspection PyUnusedLocal
-def get_bricks_count(structure: List[list[int]]) -> int:
+def get_bricks_count(structure: List[List[int]]) -> int:
     """Return number of bricks in the wall structure
 
     :param structure: represents wall structure as sequences of integers
