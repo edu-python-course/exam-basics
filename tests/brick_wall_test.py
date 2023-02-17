@@ -18,7 +18,7 @@ def test_small_brick_counter(small_fixture):
 @pytest.mark.level_1
 def test_brick_counter(regular_fixture):
     structure, number_of_bricks = regular_fixture
-    assert brick_wall.get_bricks_count(regular_fixture) == number_of_bricks
+    assert brick_wall.get_bricks_count(structure) == number_of_bricks
 
 
 @pytest.mark.xfail(os.environ.get("ENV") == "dev",
